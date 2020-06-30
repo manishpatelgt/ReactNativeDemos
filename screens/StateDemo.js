@@ -14,7 +14,7 @@ import {
    with value of empty string
    */
   state= {number: 0};
-
+//temp
      render() { 
     return(
       <SafeAreaView style={styles.container}>
