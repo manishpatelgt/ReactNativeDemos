@@ -1,5 +1,5 @@
 {
-  "main": "./screens/StateDemo.js",
+  "main": "./screens/Basics.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
