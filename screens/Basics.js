@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, StyleSheet, StatusBar, FlatList } from 'react-native';
+import { View, StyleSheet, StatusBar, FlatList, Alert } from 'react-native';
 import { registerRootComponent } from 'expo';
 
 
@@ -8,6 +8,9 @@ import AddItem from './AddItem'
 import Header from './Header'
 
 const App = () => {
+
+    const number = Math.floor(Math.random() * 500)
+    console.log(number)
 
     const [items, setItems] = useState([
         { id: Math.floor(Math.random() * 100), text: 'Milk' },
@@ -24,9 +27,16 @@ const App = () => {
     }
 
     const addItem = (text) => {
-        setItems(prevItems => {
-            return [{ id: Math.floor(Math.random() * 500), text }, ...prevItems];
-        })
+        if (!text) {
+            Alert.alert('Error', 'Pleas enter an item', [{
+                text: 'OK'
+            }],
+                { cancelable: false });
+        } else {
+            setItems(prevItems => {
+                return [{ id: Math.floor(Math.random() * 500), text }, ...prevItems];
+            });
+        }
     }
 
     return (

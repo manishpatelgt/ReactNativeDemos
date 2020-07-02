@@ -15,14 +15,15 @@ Header.defaultProps = {
 
 const styles = StyleSheet.create({
     header: {
-        height: 60,
+        height: 55,
         padding: 15,
         backgroundColor: 'darkslateblue'
     },
     text: {
         color: '#fff',
         fontSize: 20,
-        textAlign: 'center'
+        textAlign: 'center',
+        fontWeight: 'bold'
     }
 });
 

@@ -3,11 +3,18 @@ import { View, StyleSheet, TextInput, Button } from 'react-native';
 
 const AddItem = ({ title, addItem}) => {
     const[text, setText] = useState('');
+
+    const clearText = (text) =>{
+        setText('');
+    }
+
     const onChange  = (textValue) =>  setText(textValue);
+    
     return (
         <View>
             <TextInput placeholder="Add Item.." style={styles.input} onChangeText={onChange} />
-            <Button style={styles.btnText} title="Add Item" onPress={() => addItem(text)} />
+            <Button style={styles.btnText} title="Add Item" 
+            onPress = {()=>  {addItem(text) , clearText(text)}} />
         </View>
     )
 }
@@ -19,7 +26,7 @@ const styles = StyleSheet.create({
         fontSize: 16
     },
     btnText: {
-        backgroundColor: '#c2bad8'
+        color: '#c2bad8'
     }
 });
 
